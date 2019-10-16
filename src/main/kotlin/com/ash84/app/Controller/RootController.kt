@@ -1,4 +1,4 @@
-package com.ash84.app
+package com.ash84.app.Controller
 
 
 import com.ash84.app.Entity.AppInfo
