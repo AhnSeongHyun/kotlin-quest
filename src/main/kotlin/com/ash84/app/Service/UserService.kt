@@ -11,4 +11,16 @@ class UserService {
             User("ash84", 23, "sh84.ahn@gmail.com")
     )
 
+    fun add(user: User) {
+        // TODO:
+    }
+
+    fun delete(userId: Int) {
+        // TODO:
+    }
+
+    fun modify(userId: Int, name: Any, age: Any, email: Any) {
+        // TODO:
+    }
+
 }
