@@ -1,11 +1,13 @@
-# kotlin-quest
+# The Kotlin-SpringBoot Quests 
+> kotlin-spring boot master 가 되기 위한 여정 🧘🏻‍♂️
 
-## 퀘스트 1. 마을 대장장이에게 기본 무기를 받는다. ⚔️
 
-- root path 에서 json 및 version 정보를 리턴한다. ⇒ 실패 ⇒ 게임오버/손절
-- controller 지정했는데 왜 안될까?
+
+## 퀘스트 1-1. root path 에서 json 및 version 정보를 리턴한다. 
+- 보상 : 마을 대장장이에게 기본 무기를 받는다. ⚔️
+- controller 추가했는데 왜 안될까?
 - master knight 🤺 에게 문의
-    - spring initializer 에서 dependency(web 등등 필요한것) 를 선택해라 해봐라.
+    - spring initializer 에서 dependency(web 등등 필요한것) 를 선택해봐라.
 - `RootController` 를 만들어서 퀘스트 클리어
 
 ```kotlin
@@ -21,6 +23,29 @@
     }
 ```
 
+## 퀘스트 1-2. `UserService` 를 만들고, CRUD REST API ROUTE 를 연결해라. 
+- 보상 : 마을 대장장이에게 갑옷과 기타 장비를 받는다. 🥋
+
+- Controller/UserController 의 일부
+```kotlin
+    @RequestMapping(method=[RequestMethod.POST])
+    fun add(@RequestBody payload:Map<String, Any>) {
+        val user = User(payload["name"].toString(),
+                payload["age"].toString().toInt(),
+                payload["email"].toString())
+        this.userService.add(user)
+    }
+```
+
+- User Entity 
+
+```kotlin
+data class User(val name:String, val age: Int, val email:String)
+```
+
+## 퀘스트 1-3. HTTP 200 이 아닌 다른 http status code 리턴을 한다. 에러가 난 경우 500을 리턴한다. 
+- 보상 : 마을 촌장에게 퀘스트2 를 수행할 수 있는 넘어갈 수 있는 지도를 받는다. 🏞 
+- TODO 
 
 ### Questions
 
